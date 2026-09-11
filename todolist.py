@@ -33,15 +33,20 @@ def rem_task():
      file=open("todolist.txt","r")
      contents=file.read()
      file.close()
+
      if task in contents:
         file=open("todolist.txt","w")
         contents = contents.replace(task + "\n","")
         file.write(contents)
         file.close()
+
     else:
         print("Task not found")
 
 while True:
+
+ os.system("cls")
+
  print("")
  print("1:Show tasks")
  print("2:Add task")
@@ -50,16 +55,15 @@ while True:
  print("")
 
  choice = input("Choose an option: ")
+ print("")
 
  if choice==("1"):
     show_tasks()
+    print("")
+    input("Press enter...")
  elif choice==("2"):
     add_task()
  elif choice==("3"):
     rem_task()
  elif choice==("4"):
      exit()
-
-
-
-
